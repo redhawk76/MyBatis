@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="_09_0_MyBatis3_注解_CRUD" />
+        <module name="_10_1_MyBatis3_缓存_清空一级缓存" />
+        <module name="_11_0_MyBatis3_JNDI" />
+        <module name="_04_0_mybatis_一对多_CRUD_" />
+        <module name="_06_0_MyBatis3_多对多_CRUD_" />
+        <module name="_07_0_MyBatis3_动态SQL_" />
+        <module name="_09_4_MyBatis3_注解_批量CRUD" />
+        <module name="_14_0_MyBatis3_QBC_CRUD" />
+        <module name="_09_3_MyBatis3_注解_多对多" />
+        <module name="_01_0_mybatis_工程搭建" />
+        <module name="_15_0_MyBatis3_高级查询_分页查询" />
+        <module name="_10_0_MyBatis3_缓存_一级缓存" />
+        <module name="_10_2_MyBatis3_缓存_二级缓存" />
+        <module name="_03_0_mybatis_一对一_CRUD_延迟加载" />
+        <module name="_09_1_MyBatis3_注解_一对一" />
+        <module name="_02_0_mybatis_一对一_CRUD" />
+        <module name="_13_0_MyBatis3_调用存储过程" />
+        <module name="_01_1_mybatis_参数处理" />
+        <module name="mybatis-generator" />
+        <module name="_09_2_MyBatis3_注解_一对多" />
+        <module name="_05_0_MyBatis3_一对多_CRUD_延迟加载" />
+        <module name="_08_0_MyBatis3_配置文件_批量CRUD" />
+        <module name="_12_0_MyBatis3_PageHelper" />
+        <module name="_01_0_mybatis_工程搭建_CRUD" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="_01_0_mybatis_工程搭建" target="1.7" />
+      <module name="_01_1_mybatis_参数处理" target="1.7" />
+      <module name="_02_0_mybatis_一对一_CRUD" target="1.7" />
+      <module name="_03_0_mybatis_一对一_CRUD_延迟加载" target="1.7" />
+      <module name="_04_0_mybatis_一对多_CRUD_" target="1.7" />
+      <module name="_05_0_MyBatis3_一对多_CRUD_延迟加载" target="1.7" />
+      <module name="_06_0_MyBatis3_多对多_CRUD_" target="1.7" />
+      <module name="_07_0_MyBatis3_动态SQL_" target="1.7" />
+      <module name="_08_0_MyBatis3_配置文件_批量CRUD" target="1.7" />
+      <module name="_09_0_MyBatis3_注解_CRUD" target="1.7" />
+      <module name="_09_1_MyBatis3_注解_一对一" target="1.7" />
+      <module name="_09_2_MyBatis3_注解_一对多" target="1.7" />
+      <module name="_09_3_MyBatis3_注解_多对多" target="1.7" />
+      <module name="_09_4_MyBatis3_注解_批量CRUD" target="1.7" />
+      <module name="_10_0_MyBatis3_缓存_一级缓存" target="1.7" />
+      <module name="_10_1_MyBatis3_缓存_清空一级缓存" target="1.7" />
+      <module name="_10_2_MyBatis3_缓存_二级缓存" target="1.7" />
+      <module name="_11_0_MyBatis3_JNDI" target="1.7" />
+      <module name="_12_0_MyBatis3_PageHelper" target="1.7" />
+      <module name="_13_0_MyBatis3_调用存储过程" target="1.7" />
+      <module name="_14_0_MyBatis3_QBC_CRUD" target="1.7" />
+      <module name="_15_0_MyBatis3_高级查询_分页查询" target="1.7" />
+      <module name="mybatis-generator" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

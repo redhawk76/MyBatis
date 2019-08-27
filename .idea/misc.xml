@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/_01_mybatis_工程搭建/pom.xml" />
+        <option value="$PROJECT_DIR$/_01_1_mybatis_参数处理/pom.xml" />
+        <option value="$PROJECT_DIR$/_01_0_mybatis_工程搭建_CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/_02_0_mybatis_一对一_CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/_03_0_mybatis_一对一_CRUD_延迟加载/pom.xml" />
+        <option value="$PROJECT_DIR$/_04_0_mybatis_一对多_CRUD_/pom.xml" />
+        <option value="$PROJECT_DIR$/_05_MyBatis3_配置文件_一对多_CRUD_延迟加载/pom.xml" />
+        <option value="$PROJECT_DIR$/_06_0_MyBatis3_多对多_CRUD_/pom.xml" />
+        <option value="$PROJECT_DIR$/_07_0_MyBatis3_动态SQL_/pom.xml" />
+        <option value="$PROJECT_DIR$/_08_0_MyBatis3_配置文件_批量CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/_09_0_MyBatis3_注解_CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/_09_1_MyBatis3_注解_一对一/pom.xml" />
+        <option value="$PROJECT_DIR$/_09_2_MyBatis3_注解_一对多/pom.xml" />
+        <option value="$PROJECT_DIR$/_09_3_MyBatis3_注解_多对多/pom.xml" />
+        <option value="$PROJECT_DIR$/_09_4_MyBatis3_注解_批量CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/_10_0_MyBatis3_缓存_一级缓存/pom.xml" />
+        <option value="$PROJECT_DIR$/_10_1_MyBatis3_缓存_清空一级缓存/pom.xml" />
+        <option value="$PROJECT_DIR$/_10_2_MyBatis3_缓存_二级缓存/pom.xml" />
+        <option value="$PROJECT_DIR$/_11_0_MyBatis3_JNDI/pom.xml" />
+        <option value="$PROJECT_DIR$/_12_0_MyBatis3_PageHelper/pom.xml" />
+        <option value="$PROJECT_DIR$/_13_0_MyBatis3_调用存储过程/pom.xml" />
+        <option value="$PROJECT_DIR$/_14_0_MyBatis3_QBC_CRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/_15_0_MyBatis3_高级查询_分页查询/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-generator/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8.0_131" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <!-- 注释生成器 -->
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- Mysql数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/cr_hcop_new"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+        <!-- Oracle数据库
+            <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:yycg"
+                userId="yycg"
+                password="yycg">
+            </jdbcConnection>
+        -->
+
+        <!-- 默认为false，把JDBC DECIMAL 和NUMERIC类型解析为Integer，为true时
+        把JDBC DECIMAL 和NUMERIC类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- targetProject：生成POJO类的位置 -->
+        <javaModelGenerator targetPackage="xyz.redhawk.generator.pojo" targetProject="mybatis-generator\src\main\java\">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- targetProject：mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="xyz.redhawk.generator.mapper" targetProject="mybatis-generator\src\main\java\">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- targetProject：mapper接口生成的的位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="xyz.redhawk.generator.mapper" targetProject="mybatis-generator\src\main\java\">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+
+        <!-- ============================================================================== -->
+        <table tableName="cr_area_mid" delimitIdentifiers="true" domainObjectName="cr_area_mid">
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <!-- ============================================================================= -->
+
+
+        <!-- 指定数据表 -->
+        <!--      <table schema="" tableName="tb_content"></table>
+             <table schema="" tableName="tb_content_category"></table>
+               <table schema="" tableName="tb_item"></table>
+               <table schema="" tableName="tb_item_cat"></table>
+               <table schema="" tableName="tb_item_desc"></table>
+               <table schema="" tableName="tb_item_param"></table>
+               <table schema="" tableName="tb_item_param_item"></table>
+               <table schema="" tableName="tb_order"></table>
+               <table schema="" tableName="tb_order_item"></table>
+               <table schema="" tableName="tb_order_shipping"></table>
+               <table schema="" tableName="tb_user"></table>-->
+
+        <!-- 有些表的字段需要指定java类型
+        <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
+          <property name="useActualColumnNames" value="true"/>
+          <generatedKey column="ID" sqlStatement="DB2" identity="true" />
+          <columnOverride column="DATE_FIELD" property="startDate" />
+          <ignoreColumn column="FRED" />
+          <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+        </table> -->
+
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,24 @@
+2019-05-25 20:27:23,550 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2019-05-25 20:27:23,773 223    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2019-05-25 20:27:23,805 255    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:27:23,805 255    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:27:23,805 255    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:27:23,805 255    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:27:23,924 374    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Opening JDBC Connection
+2019-05-25 20:27:24,138 588    [           main] DEBUG source.pooled.PooledDataSource  - Created connection 2095490653.
+2019-05-25 20:27:24,139 589    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@7ce6a65d]
+2019-05-25 20:27:24,141 591    [           main] DEBUG is.mapper.DepartmentMapper.get  - ==>  Preparing: SELECT d.id,d.name, e.id AS e_id ,e.name AS e_name FROM department d JOIN employee e ON d.id = e.dept_id WHERE d.id = ? 
+2019-05-25 20:27:24,161 611    [           main] DEBUG is.mapper.DepartmentMapper.get  - ==> Parameters: 1(Long)
+2019-05-25 20:27:24,177 627    [           main] DEBUG is.mapper.DepartmentMapper.get  - <==      Total: 1
+2019-05-25 20:28:50,608 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2019-05-25 20:28:50,747 139    [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2019-05-25 20:28:50,771 163    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:28:50,771 163    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:28:50,771 163    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:28:50,771 163    [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2019-05-25 20:28:50,876 268    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Opening JDBC Connection
+2019-05-25 20:28:51,075 467    [           main] DEBUG source.pooled.PooledDataSource  - Created connection 2095490653.
+2019-05-25 20:28:51,075 467    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@7ce6a65d]
+2019-05-25 20:28:51,078 470    [           main] DEBUG is.mapper.DepartmentMapper.get  - ==>  Preparing: SELECT d.id,d.name, e.id AS e_id ,e.name AS e_name FROM department d JOIN employee e ON d.id = e.dept_id WHERE d.id = ? 
+2019-05-25 20:28:51,103 495    [           main] DEBUG is.mapper.DepartmentMapper.get  - ==> Parameters: 1(Long)
+2019-05-25 20:28:51,122 514    [           main] DEBUG is.mapper.DepartmentMapper.get  - <==      Total: 3
