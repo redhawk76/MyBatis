@@ -6,9 +6,9 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import vc.helloworld.dao.IUserDao;
-import vc.helloworld.dao.impl.UserDaoImpl;
-import vc.helloworld.domain.User;
+import xyz.redhawk.mybatis.mapper.IUserDao;
+import xyz.redhawk.mybatis.mapper.impl.UserDaoImpl;
+import xyz.redhawk.mybatis.objects.entitys.User;
 
 import java.io.InputStream;
 import java.util.Date;

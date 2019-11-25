@@ -1,6 +1,6 @@
-package vc.helloworld.dao;
+package xyz.redhawk.mybatis.mapper;
 
-import vc.helloworld.domain.User;
+import xyz.redhawk.mybatis.objects.entitys.User;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
-package vc.helloworld.dao.impl;
+package xyz.redhawk.mybatis.mapper.impl;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import vc.helloworld.domain.User;
+import xyz.redhawk.mybatis.objects.entitys.User;
+import xyz.redhawk.mybatis.mapper.IUserDao;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  */
 
 
-public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
+public class UserDaoImpl implements IUserDao {
 
     private SqlSessionFactory factory;
 
@@ -29,7 +30,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用SqlSession中的方法，实现查询列表
-        List<User> users = session.selectList("vc.helloworld.mapper.IUserDao.findAll");//参数就是能获取配置信息的key
+        List<User> users = session.selectList("vc.redhawk.mapper.IUserDao.findAll");//参数就是能获取配置信息的key
         //3.释放资源
         session.close();
         return users;
@@ -40,7 +41,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用方法实现保存
-        int insert = session.insert("vc.helloworld.mapper.IUserDao.saveUser", user);
+        int insert = session.insert("vc.redhawk.mapper.IUserDao.saveUser", user);
 
         //3.提交事务
         session.commit();
@@ -55,7 +56,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用方法实现更新
-        int update = session.update("vc.helloworld.mapper.IUserDao.updateUser", user);
+        int update = session.update("vc.redhawk.mapper.IUserDao.updateUser", user);
         System.out.println(update);
         //3.提交事务
         session.commit();
@@ -68,7 +69,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用方法实现更新
-        session.update("vc.helloworld.mapper.IUserDao.deleteUser",userId);
+        session.update("vc.redhawk.mapper.IUserDao.deleteUser",userId);
         //3.提交事务
         session.commit();
         //4.释放资源
@@ -80,7 +81,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用SqlSession中的方法，实现查询一个
-        User user = session.selectOne("vc.helloworld.mapper.IUserDao.findById",userId);
+        User user = session.selectOne("vc.redhawk.mapper.IUserDao.findById",userId);
         //3.释放资源
         session.close();
         return user;
@@ -91,7 +92,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用SqlSession中的方法，实现查询列表
-        List<User> users = session.selectList("vc.helloworld.mapper.IUserDao.findByName",username);
+        List<User> users = session.selectList("vc.redhawk.mapper.IUserDao.findByName",username);
         //3.释放资源
         session.close();
         return users;
@@ -102,7 +103,7 @@ public class UserDaoImpl implements vc.helloworld.dao.IUserDao {
         //1.根据factory获取SqlSession对象
         SqlSession session = factory.openSession();
         //2.调用SqlSession中的方法，实现查询一个
-        Integer count = session.selectOne("vc.helloworld.mapper.IUserDao.findTotal");
+        Integer count = session.selectOne("vc.redhawk.mapper.IUserDao.findTotal");
         //3.释放资源
         session.close();
         return count;
