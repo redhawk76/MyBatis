@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oracle.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="xyz.redhawk.mybatis.POJO.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="user_name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="empId" property="empId" jdbcType="INTEGER" />
+    <result column="entry_time" property="entry_time" jdbcType="DATE" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="salary" property="salary" jdbcType="REAL" />
+    <result column="annual_alary" property="annual_alary" jdbcType="BIGINT" />
+    <result column="dimission" property="dimission" jdbcType="TINYINT" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
+    <result column="calendar" property="calendar" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_name, sex, empId, entry_time, address, birthday, salary, annual_alary, dimission, 
+    role, calendar
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from "user"
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from "user"
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="xyz.redhawk.mybatis.POJO.User" useGeneratedKeys="true" keyProperty="id" >
+    insert into "user" (user_name, sex, empId, 
+      entry_time, address, birthday, 
+      salary, annual_alary, dimission, 
+      role, calendar)
+    values (#{user_name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{empId,jdbcType=INTEGER}, 
+      #{entry_time,jdbcType=DATE}, #{address,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
+      #{salary,jdbcType=REAL}, #{annual_alary,jdbcType=BIGINT}, #{dimission,jdbcType=TINYINT}, 
+      #{role,jdbcType=VARCHAR}, #{calendar,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="xyz.redhawk.mybatis.POJO.User" useGeneratedKeys="true" keyProperty="id" >
+    insert into "user"
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="user_name != null" >
+        user_name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="empId != null" >
+        empId,
+      </if>
+      <if test="entry_time != null" >
+        entry_time,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="salary != null" >
+        salary,
+      </if>
+      <if test="annual_alary != null" >
+        annual_alary,
+      </if>
+      <if test="dimission != null" >
+        dimission,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="calendar != null" >
+        calendar,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="user_name != null" >
+        #{user_name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="empId != null" >
+        #{empId,jdbcType=INTEGER},
+      </if>
+      <if test="entry_time != null" >
+        #{entry_time,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="salary != null" >
+        #{salary,jdbcType=REAL},
+      </if>
+      <if test="annual_alary != null" >
+        #{annual_alary,jdbcType=BIGINT},
+      </if>
+      <if test="dimission != null" >
+        #{dimission,jdbcType=TINYINT},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="calendar != null" >
+        #{calendar,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="xyz.redhawk.mybatis.POJO.User" >
+    update "user"
+    <set >
+      <if test="user_name != null" >
+        user_name = #{user_name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="empId != null" >
+        empId = #{empId,jdbcType=INTEGER},
+      </if>
+      <if test="entry_time != null" >
+        entry_time = #{entry_time,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="salary != null" >
+        salary = #{salary,jdbcType=REAL},
+      </if>
+      <if test="annual_alary != null" >
+        annual_alary = #{annual_alary,jdbcType=BIGINT},
+      </if>
+      <if test="dimission != null" >
+        dimission = #{dimission,jdbcType=TINYINT},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="calendar != null" >
+        calendar = #{calendar,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="xyz.redhawk.mybatis.POJO.User" >
+    update "user"
+    set user_name = #{user_name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=CHAR},
+      empId = #{empId,jdbcType=INTEGER},
+      entry_time = #{entry_time,jdbcType=DATE},
+      address = #{address,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      salary = #{salary,jdbcType=REAL},
+      annual_alary = #{annual_alary,jdbcType=BIGINT},
+      dimission = #{dimission,jdbcType=TINYINT},
+      role = #{role,jdbcType=VARCHAR},
+      calendar = #{calendar,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

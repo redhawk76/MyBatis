@@ -21,6 +21,6 @@
     </environments>
     <!-- 配置映射文件的位置 -->
     <mappers>
-        <mapper resource="vc/helloworld/dao/IUserDao.xml"></mapper>
+        <mapper resource="vc/helloworld/dao/UserMapper.xml"></mapper>
     </mappers>
 </configuration>

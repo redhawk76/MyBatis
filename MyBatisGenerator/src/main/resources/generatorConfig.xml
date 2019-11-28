@@ -19,7 +19,7 @@
         </commentGenerator>
         <!-- Mysql数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/cr_hcop_new"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/mybatisdb"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -64,7 +64,10 @@
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
         <!-- ============================================================================= -->
-
+        <table tableName="user" delimitIdentifiers="true" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
 
         <!-- 指定数据表 -->
         <!--      <table schema="" tableName="tb_content"></table>
