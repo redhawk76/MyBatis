@@ -1,62 +1,129 @@
 package xyz.redhawk.mybatis.objects.entitys;
 
-import lombok.Data;
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
-/**
- * @param ${tags}
- * @author ${USER} , 大红鹰 (RedEagles)
- * @description: TODO
- * @return ${return_type}
- * @throws
- * @date 2019/5/19 20:23
+/*
+    @build SuipriseWang
+    @Time 2019/11/28
  */
-@Data
-public class User implements Serializable {
-
-    //表id
+public class User {
     private Integer id;
 
-    //员工姓名
-    private byte userName;
+    private String user_name;
 
-    //性别
-    private char sex;
+    private String sex;
 
-    //工号
-    private int empId;
+    private Integer empId;
 
-    //入职时间
-    private LocalDateTime entryTime;
+    private Date entry_time;
 
-    //住址
     private String address;
 
-    //生日
     private Date birthday;
 
-    //工资
-    private float salary;
+    private Float salary;
 
-    //年薪
-    private BigDecimal annualSalary;
+    private Long annual_alary;
 
-    //是否离职
-    private boolean dimission;
+    private Byte dimission;
 
-    //员工角色
-    private Set role;
+    private String role;
 
-    //离职日期
-    private Calendar calendar;
+    private Date calendar;
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name == null ? null : user_name.trim();
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public Integer getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Integer empId) {
+        this.empId = empId;
+    }
+
+    public Date getEntry_time() {
+        return entry_time;
+    }
+
+    public void setEntry_time(Date entry_time) {
+        this.entry_time = entry_time;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public Float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Float salary) {
+        this.salary = salary;
+    }
+
+    public Long getAnnual_alary() {
+        return annual_alary;
+    }
+
+    public void setAnnual_alary(Long annual_alary) {
+        this.annual_alary = annual_alary;
+    }
+
+    public Byte getDimission() {
+        return dimission;
+    }
+
+    public void setDimission(Byte dimission) {
+        this.dimission = dimission;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role == null ? null : role.trim();
+    }
+
+    public Date getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(Date calendar) {
+        this.calendar = calendar;
+    }
 }

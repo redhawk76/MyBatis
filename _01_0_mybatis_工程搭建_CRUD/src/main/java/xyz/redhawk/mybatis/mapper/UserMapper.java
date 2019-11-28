@@ -3,7 +3,9 @@ package xyz.redhawk.mybatis.mapper;
     @build SuipriseWang
     @Time 2019/11/28
  */
-import xyz.redhawk.mybatis.POJO.User;
+
+
+import xyz.redhawk.mybatis.objects.entitys.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

@@ -13,7 +13,7 @@
             <!--配置连接池-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"></property>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatisdb"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"></property>
                 <property name="username" value="root"></property>
                 <property name="password" value="root"></property>
             </dataSource>
@@ -21,6 +21,6 @@
     </environments>
     <!-- 配置映射文件的位置 -->
     <mappers>
-        <mapper resource="vc/helloworld/dao/UserMapper.xml"></mapper>
+        <mapper resource="xyz/redhawk/dao/UserMapper.xml"></mapper>
     </mappers>
 </configuration>

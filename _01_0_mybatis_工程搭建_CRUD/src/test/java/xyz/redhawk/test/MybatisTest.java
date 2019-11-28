@@ -1,4 +1,4 @@
-package vc.helloworld.test;
+package xyz.redhawk.test;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -7,9 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import xyz.redhawk.mybatis.mapper.IUserDao;
 import xyz.redhawk.mybatis.mapper.UserMapper;
-import xyz.redhawk.mybatis.mapper.impl.UserDaoImpl;
 
 import java.io.InputStream;
 
