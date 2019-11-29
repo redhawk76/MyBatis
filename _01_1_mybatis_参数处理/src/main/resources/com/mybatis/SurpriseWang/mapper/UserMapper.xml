@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.SurpriseWang.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.SurpriseWang.POJO.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="user_name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="empId" property="empId" jdbcType="INTEGER" />
+    <result column="entry_time" property="entry_time" jdbcType="DATE" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="salary" property="salary" jdbcType="REAL" />
+    <result column="annual_alary" property="annual_alary" jdbcType="BIGINT" />
+    <result column="dimission" property="dimission" jdbcType="TINYINT" />
+    <result column="role" property="role" jdbcType="VARCHAR" />
+    <result column="calendar" property="calendar" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_name, sex, empId, entry_time, address, birthday, salary, annual_alary, dimission, 
+    role, calendar
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.SurpriseWang.POJO.UserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from `user`
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from `user`
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from `user`
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.SurpriseWang.POJO.UserExample" >
+    delete from `user`
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.SurpriseWang.POJO.User" useGeneratedKeys="true" keyProperty="id" >
+    insert into `user` (user_name, sex, empId, 
+      entry_time, address, birthday, 
+      salary, annual_alary, dimission, 
+      role, calendar)
+    values (#{user_name,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{empId,jdbcType=INTEGER}, 
+      #{entry_time,jdbcType=DATE}, #{address,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
+      #{salary,jdbcType=REAL}, #{annual_alary,jdbcType=BIGINT}, #{dimission,jdbcType=TINYINT}, 
+      #{role,jdbcType=VARCHAR}, #{calendar,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.SurpriseWang.POJO.User" useGeneratedKeys="true" keyProperty="id" >
+    insert into `user`
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="user_name != null" >
+        user_name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="empId != null" >
+        empId,
+      </if>
+      <if test="entry_time != null" >
+        entry_time,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="salary != null" >
+        salary,
+      </if>
+      <if test="annual_alary != null" >
+        annual_alary,
+      </if>
+      <if test="dimission != null" >
+        dimission,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="calendar != null" >
+        calendar,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="user_name != null" >
+        #{user_name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="empId != null" >
+        #{empId,jdbcType=INTEGER},
+      </if>
+      <if test="entry_time != null" >
+        #{entry_time,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="salary != null" >
+        #{salary,jdbcType=REAL},
+      </if>
+      <if test="annual_alary != null" >
+        #{annual_alary,jdbcType=BIGINT},
+      </if>
+      <if test="dimission != null" >
+        #{dimission,jdbcType=TINYINT},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="calendar != null" >
+        #{calendar,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.SurpriseWang.POJO.UserExample" resultType="java.lang.Integer" >
+    select count(*) from `user`
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update `user`
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.user_name != null" >
+        user_name = #{record.user_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=CHAR},
+      </if>
+      <if test="record.empId != null" >
+        empId = #{record.empId,jdbcType=INTEGER},
+      </if>
+      <if test="record.entry_time != null" >
+        entry_time = #{record.entry_time,jdbcType=DATE},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null" >
+        birthday = #{record.birthday,jdbcType=DATE},
+      </if>
+      <if test="record.salary != null" >
+        salary = #{record.salary,jdbcType=REAL},
+      </if>
+      <if test="record.annual_alary != null" >
+        annual_alary = #{record.annual_alary,jdbcType=BIGINT},
+      </if>
+      <if test="record.dimission != null" >
+        dimission = #{record.dimission,jdbcType=TINYINT},
+      </if>
+      <if test="record.role != null" >
+        role = #{record.role,jdbcType=VARCHAR},
+      </if>
+      <if test="record.calendar != null" >
+        calendar = #{record.calendar,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update `user`
+    set id = #{record.id,jdbcType=INTEGER},
+      user_name = #{record.user_name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=CHAR},
+      empId = #{record.empId,jdbcType=INTEGER},
+      entry_time = #{record.entry_time,jdbcType=DATE},
+      address = #{record.address,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=DATE},
+      salary = #{record.salary,jdbcType=REAL},
+      annual_alary = #{record.annual_alary,jdbcType=BIGINT},
+      dimission = #{record.dimission,jdbcType=TINYINT},
+      role = #{record.role,jdbcType=VARCHAR},
+      calendar = #{record.calendar,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.SurpriseWang.POJO.User" >
+    update `user`
+    <set >
+      <if test="user_name != null" >
+        user_name = #{user_name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="empId != null" >
+        empId = #{empId,jdbcType=INTEGER},
+      </if>
+      <if test="entry_time != null" >
+        entry_time = #{entry_time,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="salary != null" >
+        salary = #{salary,jdbcType=REAL},
+      </if>
+      <if test="annual_alary != null" >
+        annual_alary = #{annual_alary,jdbcType=BIGINT},
+      </if>
+      <if test="dimission != null" >
+        dimission = #{dimission,jdbcType=TINYINT},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=VARCHAR},
+      </if>
+      <if test="calendar != null" >
+        calendar = #{calendar,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.SurpriseWang.POJO.User" >
+    update `user`
+    set user_name = #{user_name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=CHAR},
+      empId = #{empId,jdbcType=INTEGER},
+      entry_time = #{entry_time,jdbcType=DATE},
+      address = #{address,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      salary = #{salary,jdbcType=REAL},
+      annual_alary = #{annual_alary,jdbcType=BIGINT},
+      dimission = #{dimission,jdbcType=TINYINT},
+      role = #{role,jdbcType=VARCHAR},
+      calendar = #{calendar,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

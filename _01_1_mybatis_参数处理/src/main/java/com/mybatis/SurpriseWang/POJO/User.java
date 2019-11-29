@@ -1,11 +1,7 @@
-package xyz.redhawk.mybatis.objects.entitys;
+package com.mybatis.SurpriseWang.POJO;
 
 import java.util.Date;
 
-/*
-    @build SuipriseWang
-    @Time 2019/11/28
- */
 public class User {
     private Integer id;
 

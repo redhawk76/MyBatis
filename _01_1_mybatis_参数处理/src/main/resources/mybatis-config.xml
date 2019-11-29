@@ -29,5 +29,6 @@
     <!-- 配置映射文件的位置 -->
     <mappers>
         <mapper resource="vc/helloworld/mapper/ClientMapper.xml"></mapper>
+        <mapper resource="com/mybatis/SurpriseWang/mapper/UserMapper.xml"></mapper>
     </mappers>
 </configuration>

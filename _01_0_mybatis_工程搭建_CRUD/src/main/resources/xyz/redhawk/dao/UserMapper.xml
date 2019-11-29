@@ -26,11 +26,11 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from "user"
+    delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="xyz.redhawk.mybatis.objects.entitys.User" useGeneratedKeys="true" keyProperty="id" >
-    insert into "user" (user_name, sex, empId, 
+    insert into user (user_name, sex, empId,
       entry_time, address, birthday, 
       salary, annual_alary, dimission, 
       role, calendar)
@@ -40,7 +40,7 @@
       #{role,jdbcType=VARCHAR}, #{calendar,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="xyz.redhawk.mybatis.objects.entitys.User" useGeneratedKeys="true" keyProperty="id" >
-    insert into "user"
+    insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="user_name != null" >
         user_name,
@@ -113,7 +113,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="xyz.redhawk.mybatis.objects.entitys.User" >
-    update "user"
+    update user
     <set >
       <if test="user_name != null" >
         user_name = #{user_name,jdbcType=VARCHAR},
@@ -152,7 +152,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="xyz.redhawk.mybatis.objects.entitys.User" >
-    update "user"
+    update user
     set user_name = #{user_name,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=CHAR},
       empId = #{empId,jdbcType=INTEGER},
