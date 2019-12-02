@@ -57,16 +57,24 @@ public class MyBatisTest {
         System.out.println(users);
     }
     @Test
-    //生命插入多个参数的值
-    public void insertByIdWithExample(){
-        List<User> users = new ArrayList<User>();
-        User user = new User();
-        user.setAddress("100000");
-        users.add(user);
-        user = new User();
-        user.setAddress("200000");
-        users.add(user);
+    //声明修改多个参数的值
+    public void updateUserByCondition(){
+        //根据Example中给出的条件，找到合适的，修改为User
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
+        criteria.andAddressBetween("11","22");
+        User user = new User();
+        user.setAddress("222222222222");
+        userMapper.updateByExampleSelective(user,example);
     }
+    @Test
+    //声明多个参数的删除
+    public void deleteUserByCondition(){
+        UserExample example = new UserExample();
+        UserExample.Criteria criteria = example.createCriteria();
+        criteria.andAddressEqualTo("111111111");
+        userMapper.deleteByExample(example);
+    }
+
+
 }

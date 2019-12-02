@@ -36,5 +36,6 @@
     <mappers>
         <mapper resource="vc/helloworld/mapper/DepartmentMapper.xml"></mapper>
         <mapper resource="vc/helloworld/mapper/EmployeeMapper.xml"></mapper>
+        <mapper resource="com/"
     </mappers>
 </configuration>
